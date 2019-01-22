@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+/* .container {
+    background: pink;
+    height: 50vh;
+    width: 50vw;
+    padding: 0.5em;
+    margin: 25vh auto 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    align-items: center;
+  
+
+}
+
+.item {
+    background: lightblue;
+    margin: 0.5em;
+     */
+
+
+     .button-books{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+     }
+
+     .image-description {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    
+        justify-content: center;
+        align-items: flex-start;
+      
+     }
+
+     img {
+         border-radius: 20px;
+     }
+
+     .button  {
+        background: lightblue;
+        margin: 0.5em;
+     }
+
+     .book-image, .book-title, .book-author, .book-link {
+        margin: 0.5em;
+        font-family: 'Noto Serif', serif;
+        font-weight: bold;
+
+     }
+
