@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "../Result/Result.css"
-import logo from "../Result/thumb-1920-977249.png";
 
-const containerLay = {
-    border: "2px solid red",
-}
+
+
 
 const limage = {
     height: "200px",
@@ -13,32 +11,74 @@ const limage = {
 }
 
 class Result extends Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+
+
+    }
+
+
+
+    saveBook(book) {
+        const myBook = {
+            title: book.volumeInfo.title,
+            author: { type: String, required: true },
+            link: { type: String, required: true },
+            thumbnail: { type: String, required: true },
+            description: { type: String, required: true },
+
+        }
+
+        console.log(book);
+    }
+
+    renderBook(index) {
+
+        return this.props.results.map((book, i) => {
+            return (
+                <div className="container">
+
+                    <div className="button-books">
+
+                        <div className="button" ><button><a href={book.volumeInfo.previewLink}>View</a></button></div>
+                        <div className="button" onClick={()=> this.saveBook(book)} ><button>Saved</button></div>
+                    </div>
+
+                    <div className="book-title">{book.volumeInfo.title}<p className="author">By: {book.volumeInfo.authors}</p></div>
+                    <div className="image-description">
+                        <div className="book-image"><img style={limage} src={book.volumeInfo.imageLinks.thumbnail} alt="logo" /></div>
+                        <div className="book-image">{book.volumeInfo.description}</div>
+
+                    </div>
+                </div>
+            )
+        })
+
+    }
 
     render() {
         return (
-            <div style={containerLay} className="container">
+
+            <div className="result-page">
+
                 <h1>Result</h1>
-                <hr />
-                <div className="button-books">
-
-                    <div className="button"><button>View</button></div>
-                    <div className="button"><button>Saved</button></div>
-                </div>
-
-                <div className="book-title">Title</div>
-                <div className="book-author">Author</div>
-                <div className="book-link">Link</div>
-              
-                <div className="image-description">
-                    <div className="book-image"><img style={limage} src={logo} alt="logo" /></div>
-                    <div className="book-image">lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-                </div>
+                {
+                    this.renderBook()
+                }
 
             </div>
 
         )
+
     }
+
+
+
+
 }
+
+
 
 
 export default Result;

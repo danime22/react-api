@@ -1,28 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import "./Navbar.css";
+import Saved from "../Saved/Saved";
 
-function Navbar() {
-    return (
-        <nav class="navbar navbar-expand-sm bg-light">
+
+
+
+class Navbar extends Component {
+
+
+
+
+    render() {
+        return (
+            <nav className="navbar navbar-expand-sm">
 
 
             <ul className="navbar-nav">
-            <li> Google</li>
-                <li className="nav-item">
-                    <h3> <Link to="Search" className={window.location.pathname === "Search"}>
-                        Search
-</Link></h3>
+                <li>
+                    <button  className="btn btn-outline-success my-2 my-sm-0">Search</button>
                 </li>
-                <li class="nav-item">
-                    <h3> <Link to="Saved" className={window.location.pathname === "Saved"}>
-                        Saved
-</Link></h3>
+
+                <li>
+                    <button onClick={this.Saved} className="btn btn-outline-success my-2 my-sm-0">Saved</button>
                 </li>
 
             </ul>
 
         </nav>
-    )
+        )
+    }
 }
 
 export default Navbar;

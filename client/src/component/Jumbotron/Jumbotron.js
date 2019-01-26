@@ -1,4 +1,5 @@
 import React from "react";
+import "./Jumbotron.css";
 
 
 function Jumbotron() {
@@ -6,9 +7,9 @@ function Jumbotron() {
    
 <div className="jumbotron jumbotron-fluid">
 <div className="container">
-<h1 className="display-4">Fluid jumbotron</h1>
+<h1 className="display-4">(React) Google Books Search</h1>
 
-<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+<p className="lead">Search for and Save Books of Interest</p>
 </div>
 </div>
             )

@@ -1,31 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
-/* .container {
-    background: pink;
-    height: 50vh;
-    width: 50vw;
-    padding: 0.5em;
-    margin: 25vh auto 0;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    justify-content: center;
-    align-items: center;
-  
-
+.container {
+  color: white;
+  font-size: 22px;
+   background: rgba(200, 54, 54, 0); 
+   padding: 0.5em; 
+   margin: 8vh auto 0;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+ justify-content: space-between;
+ box-shadow: 5px 10px 5px 10px #888888;
+ transition: all .4s ease-in-out;
 }
 
-.item {
-    background: lightblue;
-    margin: 0.5em;
-     */
-
-
+.container:hover {
+   transform: scale(1.1);
+}
      .button-books{
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: flex-end;
      }
 
@@ -44,7 +38,7 @@
      }
 
      .button  {
-        background: lightblue;
+    
         margin: 0.5em;
      }
 
@@ -55,3 +49,22 @@
 
      }
 
+     .book-title {
+        color: blue;
+     }
+
+     .author {
+        color: red;
+     }
+h1 {
+   text-align: center;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: bold;
+   font-size: 48px;
+}
+
+.result-page {
+   margin: 50px;
+   color: white;
+
+}

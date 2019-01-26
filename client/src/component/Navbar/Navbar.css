@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Vidaloka');
+
+.navbar {
+    /* background-image: url("/thumb-1920-573648.jpg"); */
+    background-color: black;
+}
+
+li {
+    margin: 10px;
+    font-family: 'Vidaloka', serif;
+    width: 90px;
+}
+
+button {
+    width: 100px;
+}

@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Wrapper from "./component/Wrapper/Wrapper";
 
-function App() {
-  return (
 
-    <Router>
+class App extends Component {
+  state = {
+    books: [],
+    booksSearch: ""
+  };
 
-    <div>
-    <Route exact path="/" component={Wrapper} />
-    </div>
-    </Router>
-  )
+  
+
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route exact path="/" component={Wrapper} />
+        </div>
+      </Router>
+    )
+  }
+
+
+
+
 }
 
 export default App;
