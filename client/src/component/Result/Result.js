@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import "../Result/Result.css"
-
-
-
+import "../Result/Result.css";
+import API from "../../utils/API";
 
 const limage = {
     height: "200px",
@@ -10,27 +8,32 @@ const limage = {
 
 }
 
+const viewButton = {
+    borderRadius: "30px",
+    backgroundColor: "#8FDB2C"
+}
+
 class Result extends Component {
     constructor(props) {
         super(props);
         this.props = props;
-
-
     }
 
 
 
-    saveBook(book) {
+    handleSaveBook(book) {
         const myBook = {
             title: book.volumeInfo.title,
-            author: { type: String, required: true },
-            link: { type: String, required: true },
-            thumbnail: { type: String, required: true },
-            description: { type: String, required: true },
-
+            author: book.volumeInfo.authors[0],
+            link: book.volumeInfo.previewLink,
+            thumbnail: book.volumeInfo.imageLinks.thumbnail,
+            description: book.volumeInfo.description,
         }
+        console.log(myBook);
 
-        console.log(book);
+        API.saveBook(myBook)
+        .then(res =>  console.log)
+        .catch(err => console.log);
     }
 
     renderBook(index) {
@@ -41,8 +44,8 @@ class Result extends Component {
 
                     <div className="button-books">
 
-                        <div className="button" ><button><a href={book.volumeInfo.previewLink}>View</a></button></div>
-                        <div className="button" onClick={()=> this.saveBook(book)} ><button>Saved</button></div>
+                        <div className="button" ><button style={viewButton}><a href={book.volumeInfo.previewLink} target="_preview">View</a></button></div>
+                        <div className="button" onClick={()=> this.handleSaveBook(book)} ><button style={viewButton}>Saved</button></div>
                     </div>
 
                     <div className="book-title">{book.volumeInfo.title}<p className="author">By: {book.volumeInfo.authors}</p></div>
