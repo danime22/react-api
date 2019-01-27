@@ -16,7 +16,7 @@ const font = {
 
 
 
-class MainPage extends Component {
+class SearchPane extends Component {
     constructor(props) {
         super(props);
 
@@ -55,7 +55,7 @@ class MainPage extends Component {
                         <h1 style={font}> BOOK Search</h1>
 
                         <form className="form-inline my-2 my-lg-0" >
-                            <input className="form-control mr-sm-2" type="search" name="booksSearch" value={this.props.recipeSearch} onChange={this.props.onDataChange} placeholder="Search" arial-label="Search" />
+                            <input className="form-control mr-sm-2" type="search" name="booksSearch" value={this.props.bookSearch} onChange={this.props.onDataChange} placeholder="Search" arial-label="Search" />
                             <button onClick={this.props.onClick} className="btn btn-outline-success my-2 my-sm-0">Search</button>
                         </form>
 
@@ -69,4 +69,4 @@ class MainPage extends Component {
 
 }
 
-export default MainPage;
+export default SearchPane;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Result/Result.css";
+import "../SearchResults/SearchResults.css";
 import API from "../../utils/API";
 
 const limage = {
@@ -13,7 +13,7 @@ const viewButton = {
     backgroundColor: "#8FDB2C"
 }
 
-class Result extends Component {
+class SearchResults extends Component {
     constructor(props) {
         super(props);
         this.props = props;
@@ -36,23 +36,21 @@ class Result extends Component {
         .catch(err => console.log);
     }
 
-    renderBook(index) {
-
+    renderBook() {
         return this.props.results.map((book, i) => {
             return (
-                <div className="container">
+                <div key={i} className="container">
 
                     <div className="button-books">
 
                         <div className="button" ><button style={viewButton}><a href={book.volumeInfo.previewLink} target="_preview">View</a></button></div>
-                        <div className="button" onClick={()=> this.handleSaveBook(book)} ><button style={viewButton}>Saved</button></div>
+                        <div className="button" onClick={()=> this.handleSaveBook(book)} ><button style={viewButton}>Save</button></div>
                     </div>
 
                     <div className="book-title">{book.volumeInfo.title}<p className="author">By: {book.volumeInfo.authors}</p></div>
                     <div className="image-description">
                         <div className="book-image"><img style={limage} src={book.volumeInfo.imageLinks.thumbnail} alt="logo" /></div>
                         <div className="book-image">{book.volumeInfo.description}</div>
-
                     </div>
                 </div>
             )
@@ -84,4 +82,4 @@ class Result extends Component {
 
 
 
-export default Result;
+export default SearchResults;

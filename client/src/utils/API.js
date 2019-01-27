@@ -3,7 +3,10 @@ const booksAPI = "https://www.googleapis.com/books/v1/volumes?q=";
 
 export default {
     getBooks: () => {
-        return axios.get("/api/books");
+        console.log("API BOOKS");
+        var x = axios.get("/api/books");
+        console.log("GOT:   " + JSON.stringify(x));
+        return x;
     },
     search: query => {
         const newQuery = query.replace(" ", "+");
@@ -14,6 +17,6 @@ export default {
         return axios.post("/api/books", data);
     },
     deleteBook: id => {
-        return axios.delete("/api/books/:id" + id);
+        return axios.delete("/api/books/" + id);
     }
 };
